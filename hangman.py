@@ -2,8 +2,6 @@
 import hangman_words
 import random
 import hangman_art
-#TODO-1: - Update the word list to use the 'word_list' from hangman_words.py
-#Delete this line: word_list = ["ardvark", "baboon", "camel"]
 
 print(hangman_art.logo)
 word_list=hangman_words.word_list
@@ -13,12 +11,7 @@ word_length = len(chosen_word)
 end_of_game = False
 lives = 6
 
-#TODO-3: - Import the logo from hangman_art.py and print it at the start of the game.
-
-#Testing code
 print(f'Pssst, the solution is {chosen_word}.')
-
-#Create blanks
 display = []
 for _ in range(word_length):
     display += "_"
@@ -32,13 +25,11 @@ while not end_of_game:
     #Check guessed letter
     for position in range(word_length):
         letter = chosen_word[position]
-        # print(f"Current position: {position}\n Current letter: {letter}\n Guessed letter: {guess}")
         if letter == guess:
             display[position] = letter
 
     #Check if user is wrong.
     if guess not in chosen_word:
-        #TODO-5: - If the letter is not in the chosen_word, print out the letter and let them know it's not in the word.
         lives -= 1
         if lives == 0:
             end_of_game = True
@@ -51,6 +42,4 @@ while not end_of_game:
     if "_" not in display:
         end_of_game = True
         print("You win.")
-
-    #TODO-2: - Import the stages from hangman_art.py and make this error go away.
     print(hangman_art.stages[lives])
