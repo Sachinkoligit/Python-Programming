@@ -1,4 +1,3 @@
-#Step 5
 import hangman_words
 import random
 import hangman_art
