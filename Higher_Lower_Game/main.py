@@ -40,5 +40,3 @@ while  status!='F':
   else:
     print(f"You're Wrong! Current score: {score}")
     status='F'
-  print(A['follower_count'])
-  print(B['follower_count'])
